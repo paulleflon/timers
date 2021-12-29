@@ -1,0 +1,13 @@
+{
+  "name": "timers",
+  "version": "1.0.0",
+  "description": "Enhanced setTimeout and setInterval",
+  "main": "lib/index.js",
+  "repository": "https://github.com/hickatheworld/timers.git",
+  "author": "Hicka",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "typescript": "^4.5.4"
+  }
+}
