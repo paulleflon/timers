@@ -62,7 +62,7 @@ export default class Interval implements IntervalParams {
 
 	resume() {
 		const d = this._resumingDelay || 0;
-		this._resumingDelay = null;
+		this._resumingDelay = undefined;
 		new Timeout(() => {
 			this.execute();
 			this.run();
