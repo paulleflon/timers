@@ -30,6 +30,7 @@ export default class Timeout {
 	private _delay: number;
 	private _initialDelay: number;
 	private _timeout!: NodeJS.Timeout;
+	
 	/**
 	 * @param callback The function to execute.
 	 * @param delay The time in millisecondes to wait before executing the callback.
@@ -45,7 +46,7 @@ export default class Timeout {
 		this.finished = false;
 		this._execute();
 	}
-	
+
 	private _execute() {
 		const f = async () => {
 			await this.callback(...this.args);
@@ -56,6 +57,13 @@ export default class Timeout {
 	}
 
 	/**
+	 * The delay of the Timeout.
+	 */
+	get delay(): number {
+		return this._initialDelay;
+	}
+
+	/**
 	 * Pauses the cooldown of the callback execution.
 	 */
 	pause() {
@@ -63,6 +71,17 @@ export default class Timeout {
 			this.paused = true;
 			clearTimeout(this._timeout);
 			this._delay -= Date.now() - this.createdAt.getTime();
+		}
+	}
+
+	/**
+	 * Runs the Timeout again.
+	 * @param delay The delay to rerun the Timeout with. If nothing is passed, it will use the initial delay.
+	 */
+	rerun(delay?: number) {
+		if (this.finished) {
+			this._delay = delay || this._initialDelay;
+			this._execute();
 		}
 	}
 
@@ -87,29 +106,11 @@ export default class Timeout {
 	}
 
 	/**
-	 * Runs the Timeout again.
-	 * @param delay The delay to rerun the Timeout with. If nothing is passed, it will use the initial delay.
-	 */
-	rerun(delay?: number) {
-		if (this.finished) {
-			this._delay = delay || this._initialDelay;
-			this._execute();
-		}
-	}
-
-	/**
 	 * The `Date` when the callback is expected to execute.
 	 */
 	get willExecuteAt(): Date | null {
 		if (this.finished)
 			return null;
 		return new Date(this.resumedAt.getTime() + this._delay);
-	}
-
-	/**
-	 * The delay of the Timeout.
-	 */
-	get delay(): number {
-		return this._initialDelay;
 	}
 }
