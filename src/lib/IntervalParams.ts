@@ -11,14 +11,6 @@ export default interface IntervalParams {
 	 */
 	maxExecutions?: number;
 	/**
-	 * The maximum time in milliseconds the Interval can run before stopping.
-	 */
-	maxTime?: number;
-	/**
-	 * Whether to count the time while the Interval is being paused to determine when it should stop according to `maxTime` value.
-	 */
-	maxTimeIncludesPauses?: boolean;
-	/**
 	 * Whether to reset the delay of the next execution when the Interval gets paused.
 	 * 
 	 * For example, given an Interval with a **1000ms** delay, if it gets paused **300ms** after the last execution,
