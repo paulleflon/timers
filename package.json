@@ -9,5 +9,8 @@
   "private": false,
   "dependencies": {
     "typescript": "^4.5.4"
+  },
+  "scripts": {
+    "build": "tsc"
   }
 }
