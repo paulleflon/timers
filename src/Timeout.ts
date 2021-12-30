@@ -43,10 +43,10 @@ export default class Timeout {
 		this.paused = false;
 		this.createdAt = new Date();
 		this.finished = false;
-		this.execute();
+		this._execute();
 	}
 	
-	private execute() {
+	private _execute() {
 		const f = async () => {
 			await this.callback(...this.args);
 			this.finished = true;
@@ -72,7 +72,7 @@ export default class Timeout {
 	resume() {
 		if (this.paused) {
 			this.paused = false;
-			this.execute();
+			this._execute();
 		}
 	}
 
@@ -93,7 +93,7 @@ export default class Timeout {
 	rerun(delay?: number) {
 		if (this.finished) {
 			this._delay = delay || this._initialDelay;
-			this.execute();
+			this._execute();
 		}
 	}
 
