@@ -7,7 +7,7 @@
   "author": "Hicka",
   "license": "MIT",
   "private": false,
-  "dependencies": {
+  "devDependencies": {
     "typescript": "^4.5.4"
   },
   "scripts": {
