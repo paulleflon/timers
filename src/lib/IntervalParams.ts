@@ -18,5 +18,4 @@ export default interface IntervalParams {
 	 *  - if `resetDelayOnPause` is `false`, the callback  will be executed **700ms** after it is resumed.
 	 */
 	resetDelayOnPause?: boolean;
-
 }

@@ -6,11 +6,26 @@ import Timeout from './Timeout';
  */
 export default class Interval implements IntervalParams {
 
+	/**
+	 * Arguments to pass in the callback function.
+	 */
 	args: any[];
+	/**
+	 * The function to recurrently execute.
+	 */
 	callback: Function;
+	/**
+	 * The Date when the Interval was instanciated.
+	 */
 	createdAt: Date;
+	/**
+	 * The Date when the last callback execution occured.
+	 */
 	lastExecution?: Date;
 	maxExecutions?: number;
+	/**
+	 * Whether the interval is being paused.
+	 */
 	paused: boolean;
 	resetDelayOnPause?: boolean;
 
@@ -52,6 +67,9 @@ export default class Interval implements IntervalParams {
 		this._interval = setInterval(this.execute.bind(this), this._delay);
 	}
 
+	/**
+	 * Pauses the interval.
+	 */
 	pause() {
 		clearInterval(this._interval);
 		if (!this.resetDelayOnPause) {
@@ -60,6 +78,9 @@ export default class Interval implements IntervalParams {
 		}
 	}
 
+	/**
+	 * Resumes the interval.
+	 */
 	resume() {
 		const d = this._resumingDelay || 0;
 		this._resumingDelay = undefined;
@@ -69,6 +90,9 @@ export default class Interval implements IntervalParams {
 		}, d)
 	}
 
+	/**
+	 * The amount of times the callback function has been executed by the Interval.
+	 */
 	get executions(): number {
 		return this._executionCount;
 	}
