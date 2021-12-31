@@ -71,6 +71,8 @@ export default class Interval implements IntervalParams {
 	 * Pauses the interval.
 	 */
 	pause() {
+		if (this.paused)
+			return;
 		clearInterval(this._interval);
 		if (!this.resetDelayOnPause) {
 			const last = this.lastExecution ? this.lastExecution.getTime() : this.createdAt.getTime();
@@ -82,6 +84,8 @@ export default class Interval implements IntervalParams {
 	 * Resumes the interval.
 	 */
 	resume() {
+		if (!this.paused)
+			return;
 		const d = this._resumingDelay || 0;
 		this._resumingDelay = undefined;
 		new Timeout(() => {
