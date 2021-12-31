@@ -1,4 +1,4 @@
-# timers
+# better-timers
 ## Enhanced `setInterval` and `setTimeout`
 
 ## Installation

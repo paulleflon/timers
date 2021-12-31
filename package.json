@@ -1,6 +1,6 @@
 {
-  "name": "timers",
-  "version": "1.0.0",
+  "name": "better-timers",
+  "version": "1.0.1",
   "description": "Enhanced setTimeout and setInterval",
   "main": "dist/index.js",
   "repository": "https://github.com/hickatheworld/timers.git",
