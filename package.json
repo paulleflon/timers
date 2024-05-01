@@ -1,10 +1,10 @@
 {
-  "name": "better-timers",
-  "version": "1.0.1",
+  "name": "good-timers",
+  "version": "2.0.0",
   "description": "Enhanced setTimeout and setInterval",
   "main": "dist/index.js",
-  "repository": "https://github.com/hickatheworld/timers.git",
-  "author": "Hicka",
+  "repository": "https://github.com/paulleflon/timers.git",
+  "author": "Paul Leflon",
   "license": "MIT",
   "private": false,
   "devDependencies": {

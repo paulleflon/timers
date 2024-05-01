@@ -4,16 +4,16 @@
 ## Installation
 With `npm`:
 ```
-npm install @hickatheworld/timers
+npm install good-timers
 ```
 With `yarn`:
 ```
-yarn add @hickatheworld/timers
+yarn add good-timers
 ```
 
 ## Documentation
 
-## [Interval](https://github.com/hickatheworld/timers/blob/master/src/lib/Interval.ts)
+## [Interval](https://github.com/paulleflon/timers/blob/master/src/lib/Interval.ts)
 ### Constructor
 ```
 new Interval(callback, params, ...args)
@@ -21,7 +21,7 @@ new Interval(callback, params, ...args)
 | Parameter  | Type | Description |
 | ---------- | ---- | ----------- |
 | callback | Function  | The function to recurrently execute |	
-| params  | [IntervalParams](https://github.com/hickatheworld/timers/blob/master/src/lib/IntervalParams.ts) \| number  | Parameters of the interval. A number can be passed, it will be used as the interval's delay |
+| params  | [IntervalParams](https://github.com/paulleflon/timers/blob/master/src/lib/IntervalParams.ts) \| number  | Parameters of the interval. A number can be passed, it will be used as the interval's delay |
 | args  | [any](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#any)[]  | Arguments to pass in the callback function |
 
 ### Properties
@@ -44,7 +44,7 @@ new Interval(callback, params, ...args)
 | pause | [void](https://www.typescriptlang.org/docs/handbook/2/functions.html?#void) | Pauses the Interval |
 | resume | [void](https://www.typescriptlang.org/docs/handbook/2/functions.html?#void) | Resumes the Interval |
 
-## [Timeout](https://github.com/hickatheworld/timers/blob/master/src/lib/Timeout.ts)
+## [Timeout](https://github.com/paulleflon/timers/blob/master/src/lib/Timeout.ts)
 ### Constructor
 ```
 new Timeout(callback, delay, ...args)
